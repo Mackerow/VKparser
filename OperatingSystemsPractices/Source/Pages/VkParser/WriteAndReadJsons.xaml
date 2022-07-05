@@ -1,0 +1,50 @@
+﻿<Page x:Class="OperatingSystemsPractices.Source.Pages.VkParser.WriteAndReadJsons"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:OperatingSystemsPractices.Source.Pages.VkParser"
+      mc:Ignorable="d"
+      d:DesignHeight="250" d:DesignWidth="400"
+      Title="WriteAndReadJsons">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal" Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <TextBlock Text="IterationNumber: "></TextBlock>
+            <TextBlock x:Name="IterationNumberTextBlock" Text="loading..."></TextBlock>
+        </StackPanel>
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="1" Orientation="Horizontal">
+            <StackPanel Margin="10" Width="70">
+                <TextBlock Text="IdText:"  HorizontalAlignment="Center"></TextBlock>
+                <TextBlock x:Name="PostIdTextThreadTextBlock" Text="waiting..."  HorizontalAlignment="Center"></TextBlock>
+            </StackPanel>
+            <StackPanel Margin="10" Width="70">
+                <TextBlock Text="IdPhotos:" HorizontalAlignment="Center"></TextBlock>
+                <TextBlock x:Name="PostIdPhotosThreadTextBlock" Text="waiting..." HorizontalAlignment="Center"></TextBlock>
+            </StackPanel>
+            <StackPanel Margin="10" Width="70">
+                <TextBlock Text="IdHrefs:" HorizontalAlignment="Center"></TextBlock>
+                <TextBlock x:Name="PostIdHrefsThreadTextBlock" Text="waiting..." HorizontalAlignment="Center"></TextBlock>
+            </StackPanel>
+            <StackPanel Margin="10" Width="70">
+                <TextBlock Text="ReadAllFiles:" HorizontalAlignment="Center"></TextBlock>
+                <TextBlock x:Name="ReadAllFilesThreadTextBlock" Text="waiting..." HorizontalAlignment="Center"></TextBlock>
+            </StackPanel>
+        </StackPanel>
+        <StackPanel Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock Text="Speed:" HorizontalAlignment="Center" Margin="0,5,0,5"></TextBlock>
+            <Slider Name="DemonstrationSpeedRate" Margin="0,0,0,5"
+                    Width="100" Orientation="Horizontal" HorizontalAlignment="Left"
+                    Value="128" Minimum="0" Maximum="255"
+                    SmallChange="0" LargeChange="100"
+                    TickPlacement="None" TickFrequency="10" IsMoveToPointEnabled="True" ValueChanged="DemonstrationSpeedRate_ValueChanged"/>
+        </StackPanel>
+        <Button Content="Stop" x:Name="StopButton" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16" Height="30" Width="100" Click="StopButton_Click"></Button>
+    </Grid>
+</Page>
